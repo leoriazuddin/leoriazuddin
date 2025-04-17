@@ -20,4 +20,75 @@
       <li>Unzip and set the <code>MAVEN_HOME</code> environment variable.</li>
       <li>Add <code>%MAVEN_HOME%/bin</code> to your PATH.</li>
       <li>Check with <code>mvn -version</code>.</li>
-    </
+    </ol>
+
+    <h3>🔹 Create a Project</h3>
+    <pre><code>mvn archetype:generate -DgroupId=com.example -DartifactId=demo -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false</code></pre>
+
+    <h2>🧩 Intermediate: pom.xml Deep Dive</h2>
+    <p><code>pom.xml</code> is Maven's config file. Example:</p>
+    <pre><code>
+&lt;project&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;com.example&lt;/groupId&gt;
+  &lt;artifactId&gt;demo&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.12&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;
+    </code></pre>
+
+    <h3>🔹 Build & Run</h3>
+    <pre><code>mvn compile</code></pre>
+    <pre><code>mvn test</code></pre>
+    <pre><code>mvn package</code> → generates <code>target/demo-1.0-SNAPSHOT.jar</code></pre>
+
+    <h2>🏗️ Advanced: Plugins, Profiles, and Best Practices</h2>
+
+    <h3>🔹 Maven Plugins</h3>
+    <pre><code>
+&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+      &lt;version&gt;3.8.1&lt;/version&gt;
+      &lt;configuration&gt;
+        &lt;source&gt;1.8&lt;/source&gt;
+        &lt;target&gt;1.8&lt;/target&gt;
+      &lt;/configuration&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+    </code></pre>
+
+    <h3>🔹 Maven Profiles</h3>
+    <pre><code>
+&lt;profiles&gt;
+  &lt;profile&gt;
+    &lt;id&gt;dev&lt;/id&gt;
+    &lt;properties&gt;
+      &lt;env&gt;development&lt;/env&gt;
+    &lt;/properties&gt;
+  &lt;/profile&gt;
+&lt;/profiles&gt;
+    </code></pre>
+
+    <h3>🔹 Best Practices</h3>
+    <ul>
+      <li>Keep dependencies up to date</li>
+      <li>Use a parent POM for multi-module projects</li>
+      <li>Don’t commit the <code>target/</code> directory</li>
+    </ul>
+
+    <p>🧠 Bonus: Use <code>mvn dependency:tree</code> to see your project's full dependency graph.</p>
+  </div>
+</body>
+</html>
