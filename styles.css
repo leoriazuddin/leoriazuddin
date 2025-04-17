@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/profile.jpg" alt="Profile" class="profile-img" />
+    <h1>Hello, I'm Your Name</h1>
+    <p>👨‍💻 Software Engineer | 🚀 Creator | 🧠 Lifelong Learner</p>
+
+    <div class="links">
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <section id="projects">
+      <h2>✨ Projects</h2>
+      <ul>
+        <li><strong>Project 1:</strong> Cool app that does XYZ</li>
+        <li><strong>Project 2:</strong> Machine learning fun with cats</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>📬 Contact</h2>
+      <p>Email: your@email.com</p>
+    </section>
+  </div>
+</body>
+</html>
